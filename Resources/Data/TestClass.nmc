@@ -1,0 +1,5 @@
+bool:boolVar
+int:intVar
+float:floatVar
+double:doubleVar
+string:stringVar
