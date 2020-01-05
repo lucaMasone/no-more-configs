@@ -2,7 +2,7 @@
 
 int main()
 {
-    nmc::NoMoreConfigs lNoMoreConfigs;
+    NMC::NoMoreConfigs lNoMoreConfigs;
     lNoMoreConfigs.Create(
                           "../../Resources/Data/TestClass.nmc",
                           "../../Resources/Output/");

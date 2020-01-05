@@ -1,8 +1,10 @@
 #include "NoMoreConfigs.h"
 
+#include "StringParser.h"
+
 #include <fstream>
 
-using namespace nmc;
+using namespace NMC;
 
 bool NoMoreConfigs::Create(const std::string& inputFile, const std::string& outputDir)
 {
@@ -19,8 +21,9 @@ bool NoMoreConfigs::ReadFileData(const std::string& inputFullPath)
     
     std::string lLine;
     while (getline(lInputStream, lLine)) {
-        printf("%s", lLine.c_str());
+        StringParser::Parse(lLine);
     }
+    
     lInputStream.close();
     
     return true;

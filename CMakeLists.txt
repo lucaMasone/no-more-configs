@@ -13,6 +13,8 @@ set(CMAKE_CXX_STANDARD 11)
 add_library(NoMoreConfigs STATIC 
     include/NoMoreConfigs.h
     sources/NoMoreConfigs.cpp
+    include/StringParser.h
+    sources/StringParser.cpp
 )
 
 target_include_directories(NoMoreConfigs
@@ -29,7 +31,7 @@ add_executable(NoMoreConfigs_App
    main.cpp
 )
 
-# link the new hello_library target with the hello_binary target
+# link the new NoMoreConfigs target with the NoMoreConfigs_App target
 target_link_libraries( NoMoreConfigs_App
     PRIVATE 
         NoMoreConfigs

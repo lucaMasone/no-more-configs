@@ -2,7 +2,7 @@
 
 #include <string>
 
-namespace nmc
+namespace NMC
 {
 
 class NoMoreConfigs
