@@ -9,18 +9,27 @@ set(CMAKE_CXX_STANDARD 11)
 # Create a library
 ############################################################
 
+set(SOURCE_LIST
+    "include/NoMoreConfigs.h"
+    "sources/NoMoreConfigs.cpp"
+    "include/StringParser.h"
+    "sources/StringParser.cpp"
+    "include/Data/MemberInfo.h"
+    "sources/Data/MemberInfo.cpp"
+)
+
 #Generate the static library from the library sources
 add_library(NoMoreConfigs STATIC 
     include/NoMoreConfigs.h
     sources/NoMoreConfigs.cpp
     include/StringParser.h
     sources/StringParser.cpp
+    include/Data/MemberInfo.h
+    sources/Data/MemberInfo.cpp
 )
 
-target_include_directories(NoMoreConfigs
-    PUBLIC 
-        ${PROJECT_SOURCE_DIR}/include
-)
+source_group("Header Files\\Data" FILES "include/Data/MemberInfo.h")
+source_group("Source Files\\Data" FILES "include/Data/MemberInfo.cpp")
 
 ############################################################
 # Create an executable
