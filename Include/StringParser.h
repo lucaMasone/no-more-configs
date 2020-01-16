@@ -1,11 +1,12 @@
 #pragma once
 
 #include <string>
+class IMemberInfo;
 
 namespace NMC
 {
     namespace StringParser
     {
-        void Parse(const std::string& string);
+        IMemberInfo* Parse(const std::string& string);
     }
 }

@@ -1,4 +1,5 @@
 #include "StringParser.h"
+#include "Data/MemberInfo.h"
 #include <vector>
 #include <sstream>
 #include <iostream>
@@ -26,10 +27,15 @@ namespace NMC
             }
         }
     
-        void Parse(const std::string& string)
+        IMemberInfo* Parse(const std::string& string)
         {
             std::vector<std::string> lTokens = Utility::Tokenize(string, NMC_delimiter);
-            std::for_each(lTokens.begin(), lTokens.end(), [](const std::string& token){ std::cout << token << std::endl; });
+            //std::for_each(lTokens.begin(), lTokens.end(), [](const std::string& token){ std::cout << token << std::endl; });
+
+            if (lTokens[0] == "int")
+            {
+                return new MemberData<int>();
+            }
         }
     }
 }
