@@ -1,8 +1,9 @@
 #include "NoMoreConfigs.h"
-
 #include "StringParser.h"
-
+#include "Data/MemberInfo.h"
 #include <fstream>
+#include <vector>
+#include <memory>
 
 using namespace NMC;
 
@@ -20,10 +21,11 @@ bool NoMoreConfigs::ReadFileData(const std::string& inputFullPath)
         return false;
     
     std::string lLine;
-    while (getline(lInputStream, lLine)) {
-        StringParser::Parse(lLine);
+    std::vector<std::unique_ptr<IMemberInfo>> lMembers;
+    while (getline(lInputStream, lLine))
+    {
+        lMembers.push_back(StringParser::Parse(lLine));
     }
-    
     lInputStream.close();
     
     return true;

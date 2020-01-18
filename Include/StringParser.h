@@ -7,6 +7,6 @@ namespace NMC
 {
     namespace StringParser
     {
-        IMemberInfo* Parse(const std::string& string);
+        std::unique_ptr<IMemberInfo> Parse(const std::string& string);
     }
 }
