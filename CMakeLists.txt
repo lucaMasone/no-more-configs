@@ -23,11 +23,11 @@ add_library(NoMoreConfigs STATIC
     sources/Info/ClassInfo.cpp
 )
 
-source_group("Header Files\\Data" FILES 
+source_group("Header Files\\Info" FILES 
 	"include/Info/MemberInfo.h"
 	"include/Info/ClassInfo.h")
 
-source_group("Source Files\\Data" FILES 
+source_group("Source Files\\Info" FILES 
 	"sources/Info/MemberInfo.cpp"
 	"sources/Info/ClassInfo.cpp")
 
