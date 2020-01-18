@@ -17,19 +17,19 @@ add_library(NoMoreConfigs STATIC
     sources/NoMoreConfigs.cpp
     include/StringParser.h
     sources/StringParser.cpp
-    include/Data/MemberInfo.h
-    sources/Data/MemberInfo.cpp
-    include/Data/ClassInfo.h
-    sources/Data/ClassInfo.cpp
+    include/Info/MemberInfo.h
+    sources/Info/MemberInfo.cpp
+    include/Info/ClassInfo.h
+    sources/Info/ClassInfo.cpp
 )
 
 source_group("Header Files\\Data" FILES 
-	"include/Data/MemberInfo.h"
-	"include/Data/ClassInfo.h")
+	"include/Info/MemberInfo.h"
+	"include/Info/ClassInfo.h")
 
 source_group("Source Files\\Data" FILES 
-	"sources/Data/MemberInfo.cpp"
-	"sources/Data/ClassInfo.cpp")
+	"sources/Info/MemberInfo.cpp"
+	"sources/Info/ClassInfo.cpp")
 
 include_directories("include")
 

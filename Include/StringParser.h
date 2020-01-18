@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Data/MemberInfo.h"
+#include "Info/MemberInfo.h"
 
 #include <string>
 

@@ -1,7 +1,7 @@
 #include "NoMoreConfigs.h"
 #include "StringParser.h"
-#include "Data/ClassInfo.h"
-#include "Data/MemberInfo.h"
+#include "Info/ClassInfo.h"
+#include "Info/MemberInfo.h"
 
 #include <fstream>
 #include <vector>
