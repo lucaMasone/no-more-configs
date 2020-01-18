@@ -1,5 +1,4 @@
 #include "StringParser.h"
-#include "Data/MemberInfo.h"
 #include <vector>
 #include <sstream>
 #include <iostream>
@@ -62,6 +61,18 @@ namespace NMC
             }
             lMemberInfo->mName = lMemberName;
             return lMemberInfo;
+        }
+    
+        std::string RemoveFileExtension(const std::string& filename)
+        {
+            size_t lastdot = filename.find_last_of(".");
+            size_t lastSeparatorDir = filename.find_last_of("\\");
+            if(lastSeparatorDir == std::string::npos)
+                lastSeparatorDir = filename.find_last_of("/");
+            if (lastdot == std::string::npos || lastSeparatorDir == std::string::npos)
+                return std::string();
+
+            return filename.substr(lastSeparatorDir + 1, lastdot - lastSeparatorDir - 1);
         }
     }
 }

@@ -1,6 +1,8 @@
 #include "NoMoreConfigs.h"
 #include "StringParser.h"
+#include "Data/ClassInfo.h"
 #include "Data/MemberInfo.h"
+
 #include <fstream>
 #include <vector>
 #include <memory>
@@ -26,6 +28,9 @@ bool NoMoreConfigs::ReadFileData(const std::string& inputFullPath)
     {
         lMembers.push_back(StringParser::Parse(lLine));
     }
+    
+    ClassInfo lClassInfo(StringParser::RemoveFileExtension(inputFullPath), std::move(lMembers));
+                         
     lInputStream.close();
     
     return true;

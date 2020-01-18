@@ -8,8 +8,6 @@
 class IMemberInfo
 {
 public:
-    IMemberInfo() = default;
-    ~IMemberInfo() = default;
     
     std::string mName;
 };
