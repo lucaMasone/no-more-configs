@@ -6,31 +6,34 @@
 #include <memory>
 #include <vector>
 
-class ClassInfo final
-{
-public:
-    ClassInfo(const std::string& name, std::vector<std::unique_ptr<IMemberInfo>> members):
-        mName(name),
-        mMembers(std::move(members))
-    {
-        
+namespace NMC {
+    namespace Info{
+        class ClassInfo final
+        {
+        public:
+            ClassInfo(const std::string& inputFullPath)
+            {
+                Init(inputFullPath);
+            }
+            
+            ~ClassInfo()
+            {
+                mMembers.clear();
+            }
+            
+            ClassInfo(const ClassInfo& other) = delete;
+            ClassInfo& operator=(const ClassInfo& other) = delete;
+            
+            std::string GetName() const
+            {
+                return mName;
+            }
+            
+        private:
+            bool Init(const std::string& inputFullPath);
+            
+            std::string mName;
+            std::vector<std::unique_ptr<IMemberInfo>> mMembers;
+        };
     }
-    
-    ~ClassInfo()
-    {
-        mMembers.clear();
-    }
-    
-    ClassInfo(const ClassInfo& other) = delete;
-    ClassInfo& operator=(const ClassInfo& other) = delete;
-    
-    std::string GetName() const
-    {
-        return mName;
-    }
-    
-    
-private:
-    std::string mName;
-    std::vector<std::unique_ptr<IMemberInfo>> mMembers;
-};
+}

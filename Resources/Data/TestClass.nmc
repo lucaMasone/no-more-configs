@@ -1,5 +1,5 @@
-bool:boolVar
-int:intVar
-float:floatVar
-double:doubleVar
-string:stringVar
+bool:boolVarName
+int:intVarName
+float:floatVarName
+double:doubleVarName
+string:stringVarName
